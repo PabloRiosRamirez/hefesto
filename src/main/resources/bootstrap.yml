@@ -1,3 +1,8 @@
 spring:
   application:
     name: hefesto
+  cloud:
+    config:
+      uri:  ${SPRING_CLOUD_CONFIG_URI}
+      label:  ${SPRING_CLOUD_CONFIG_LABEL}
+      profile:  ${SPRING_CLOUD_CONFIG_PROFILE}

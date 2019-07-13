@@ -1,26 +1,28 @@
 package online.grisk.hefesto.controller;
 
-import online.grisk.hefesto.integration.GatewayService;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import online.grisk.hefesto.integration.gateway.GatewayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 @RestController
 public class MainController {
-
-    private static final Log logger = LogFactory.getLog(MainController.class);
-
     @Autowired
     GatewayService gatewayService;
 
-    @PostMapping(value = "/v1/rest/api/report")
+    @PostMapping(value = "/v1/rest/api/bureau")
     public Map<String, Object> report(@RequestBody Map payload) {
-        return gatewayService.process(MessageBuilder.withPayload(payload).build());
+        HashMap<String, Object> response = new HashMap<>();
+        response.put("uuid", UUID.randomUUID());
+        response.put("timestamp", new Date());
+        response.put("request", payload);
+        return gatewayService.process(MessageBuilder.withPayload(response).build());
     }
 }

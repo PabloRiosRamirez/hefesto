@@ -1,12 +1,10 @@
-package online.grisk.hefesto.integration;
+package online.grisk.hefesto.integration.gateway;
 
 import org.springframework.integration.annotation.Gateway;
-import org.springframework.integration.annotation.MessagingGateway;
 import org.springframework.messaging.Message;
 
 import java.util.Map;
 
-@MessagingGateway(defaultRequestChannel = "primaryChannel")
 public interface GatewayService {
     @Gateway
     Map process(Message message);
