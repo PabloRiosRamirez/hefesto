@@ -32,9 +32,9 @@ public class MainController {
 			responseMap.put("message", "Attribute 'rut' is required.");
 			return new ResponseEntity<Map<String, Object>>(responseMap, HttpStatus.BAD_REQUEST);
 		}
-		responseMap.put("rut", payload.get("rut"));
+		responseMap.put("rut", payload.get("rut").toString().replaceAll("\\.", ""));
 		
-		if(!ControllerUtils.validateRut(payload.get("rut").toString())) {
+		if(!ControllerUtils.validateRut(responseMap.get("rut").toString())) {
 			responseMap.put("message", "Rut validation failed. Format must be XXXXXXXX-X and valid.");
 			return new ResponseEntity<Map<String, Object>>(responseMap, HttpStatus.BAD_REQUEST);
 		}

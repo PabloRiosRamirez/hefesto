@@ -6,10 +6,8 @@ import lombok.Getter;
 @Getter
 public class Applicant {
     private Attribute attribute;
-    private AdditionalAttribute additionalAttribute;
 
-    public Applicant(Attribute attribute, AdditionalAttribute additionalAttribute) {
+    public Applicant(Attribute attribute) {
         this.attribute = attribute;
-        this.additionalAttribute = additionalAttribute;
     }
 }
