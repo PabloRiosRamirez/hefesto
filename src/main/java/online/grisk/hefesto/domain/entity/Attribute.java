@@ -2,16 +2,17 @@ package online.grisk.hefesto.domain.entity;
 
 import lombok.Getter;
 
+import java.util.Random;
+
 @Getter
 public class Attribute {
-
     private String NCONSULTASRUT_2;
     private String NCONSULTASRUT_6;
     private String NCONSULTASRUT_12;
     private String NCONSULTASRUT_24;
     private String NCONSULTASRUT_36;
     private String NHIJOS;
-    private String CANTDEUPREV;
+    private String CANTANTLAB;
     private String EDAD;
     private String MONTRENT;
     private String NPRENDAS;
@@ -72,14 +73,14 @@ public class Attribute {
     private String MONTBOLCON_24;
     private String MONTBOLCON_36;
 
-    public Attribute(String NCONSULTASRUT_2, String NCONSULTASRUT_6, String NCONSULTASRUT_12, String NCONSULTASRUT_24, String NCONSULTASRUT_36, String NHIJOS, String CANTDEUPREV, String EDAD, String MONTRENT, String NPRENDAS, String CANTUBIDOM, String CANTACREE_2, String CANTACREE_6, String CANTACREE_12, String CANTACREE_24, String CANTACREE_36, String CANTDOC_2, String CANTDOC_6, String CANTDOC_12, String CANTDOC_24, String CANTDOC_36, String CANTDOCACL_2, String CANTDOCACL_6, String CANTDOCACL_12, String CANTDOCACL_24, String CANTDOCACL_36, String CANTDOCNOAC_2, String CANTDOCNOAC_6, String CANTDOCNOAC_12, String CANTDOCNOAC_24, String CANTDOCNOAC_36, String MONTDOC_2, String MONTDOC_6, String MONTDOC_12, String MONTDOC_24, String MONTDOC_36, String MONTDOCACL_2, String MONTDOCACL_6, String MONTDOCACL_12, String MONTDOCACL_24, String MONTDOCACL_36, String MONTDOCNOAC_2, String MONTDOCNOAC_6, String MONTDOCNOAC_12, String MONTDOCNOAC_24, String MONTDOCNOAC_36, String CANTCCC_2, String CANTCCC_6, String CANTCCC_12, String CANTCCC_24, String CANTCCC_36, String CANTTCC_2, String CANTTCC_6, String CANTTCC_12, String CANTTCC_24, String CANTTCC_36, String PUNTSCORE_2, String PUNTSCORE_6, String PUNTSCORE_12, String PUNTSCORE_24, String PUNTSCORE_36, String MONTBOLCON_2, String MONTBOLCON_6, String MONTBOLCON_12, String MONTBOLCON_24, String MONTBOLCON_36) {
+    public Attribute(String NCONSULTASRUT_2, String NCONSULTASRUT_6, String NCONSULTASRUT_12, String NCONSULTASRUT_24, String NCONSULTASRUT_36, String NHIJOS, String CANTANTLAB, String EDAD, String MONTRENT, String NPRENDAS, String CANTUBIDOM, String CANTACREE_2, String CANTACREE_6, String CANTACREE_12, String CANTACREE_24, String CANTACREE_36, String CANTDOC_2, String CANTDOC_6, String CANTDOC_12, String CANTDOC_24, String CANTDOC_36, String CANTDOCACL_2, String CANTDOCACL_6, String CANTDOCACL_12, String CANTDOCACL_24, String CANTDOCACL_36, String CANTDOCNOAC_2, String CANTDOCNOAC_6, String CANTDOCNOAC_12, String CANTDOCNOAC_24, String CANTDOCNOAC_36, String MONTDOC_2, String MONTDOC_6, String MONTDOC_12, String MONTDOC_24, String MONTDOC_36, String MONTDOCACL_2, String MONTDOCACL_6, String MONTDOCACL_12, String MONTDOCACL_24, String MONTDOCACL_36, String MONTDOCNOAC_2, String MONTDOCNOAC_6, String MONTDOCNOAC_12, String MONTDOCNOAC_24, String MONTDOCNOAC_36, String CANTCCC_2, String CANTCCC_6, String CANTCCC_12, String CANTCCC_24, String CANTCCC_36, String CANTTCC_2, String CANTTCC_6, String CANTTCC_12, String CANTTCC_24, String CANTTCC_36, String PUNTSCORE_2, String PUNTSCORE_6, String PUNTSCORE_12, String PUNTSCORE_24, String PUNTSCORE_36, String MONTBOLCON_2, String MONTBOLCON_6, String MONTBOLCON_12, String MONTBOLCON_24, String MONTBOLCON_36) {
         this.NCONSULTASRUT_2 = NCONSULTASRUT_2;
         this.NCONSULTASRUT_6 = NCONSULTASRUT_6;
         this.NCONSULTASRUT_12 = NCONSULTASRUT_12;
         this.NCONSULTASRUT_24 = NCONSULTASRUT_24;
         this.NCONSULTASRUT_36 = NCONSULTASRUT_36;
         this.NHIJOS = NHIJOS;
-        this.CANTDEUPREV = CANTDEUPREV;
+        this.CANTANTLAB = CANTANTLAB;
         this.EDAD = EDAD;
         this.MONTRENT = MONTRENT;
         this.NPRENDAS = NPRENDAS;
@@ -139,5 +140,142 @@ public class Attribute {
         this.MONTBOLCON_12 = MONTBOLCON_12;
         this.MONTBOLCON_24 = MONTBOLCON_24;
         this.MONTBOLCON_36 = MONTBOLCON_36;
+    }
+
+    public static Attribute random() {
+        Random rd = new Random();
+        Integer NCONSULTASRUT_2 = rd.nextInt(20) + 1;
+        Integer NCONSULTASRUT_6 = NCONSULTASRUT_2 + rd.nextInt(5) + 1;
+        Integer NCONSULTASRUT_12 = NCONSULTASRUT_6 + rd.nextInt(5) + 1;
+        Integer NCONSULTASRUT_24 = NCONSULTASRUT_12 + rd.nextInt(5) + 1;
+        Integer NCONSULTASRUT_36 = NCONSULTASRUT_24 + rd.nextInt(5) + 1;
+        Integer NHIJOS = rd.nextInt(7);
+        Integer CANTANTLAB = rd.nextInt(40);
+        Integer EDAD = rd.nextInt(40);
+        Double MONTRENT = CANTANTLAB == 0 ? 0.00 : (Math.random() * 2500000) + 295000;
+        Integer NPRENDAS = rd.nextInt(5);
+        Integer CANTUBIDOM = rd.nextInt(35);
+        Integer CANTACREE_2 = rd.nextInt(10);
+        Integer CANTACREE_6 = CANTACREE_2 + rd.nextInt(5) + 1;
+        Integer CANTACREE_12 = CANTACREE_6 + rd.nextInt(5) + 1;
+        Integer CANTACREE_24 = CANTACREE_12 + rd.nextInt(5) + 1;
+        Integer CANTACREE_36 = CANTACREE_24 + rd.nextInt(5) + 1;
+        Integer CANTDOC_2 = rd.nextInt(10);
+        Integer CANTDOC_6 = CANTDOC_2 + rd.nextInt(10);
+        Integer CANTDOC_12 = CANTDOC_6 + rd.nextInt(10);
+        Integer CANTDOC_24 = CANTDOC_12 + rd.nextInt(10);
+        Integer CANTDOC_36 = CANTDOC_24 + rd.nextInt(10);
+        Integer CANTDOCACL_2 = rd.nextInt(CANTDOC_6);
+        Integer CANTDOCACL_6 = CANTDOCACL_2 + rd.nextInt(CANTDOC_6 - CANTDOC_2);
+        Integer CANTDOCACL_12 = CANTDOCACL_2 + rd.nextInt(CANTDOC_12 - CANTDOC_2);
+        Integer CANTDOCACL_24 = CANTDOCACL_2 + rd.nextInt(CANTDOC_24 - CANTDOC_2);
+        Integer CANTDOCACL_36 = CANTDOCACL_2 + rd.nextInt(CANTDOC_36 - CANTDOC_2);
+        Integer CANTDOCNOAC_2 = CANTDOC_2 - CANTDOCACL_2;
+        Integer CANTDOCNOAC_6 = CANTDOC_6 - CANTDOCACL_6;
+        Integer CANTDOCNOAC_12 = CANTDOC_12 - CANTDOCACL_12;
+        Integer CANTDOCNOAC_24 = CANTDOC_24 - CANTDOCACL_24;
+        Integer CANTDOCNOAC_36 = CANTDOC_36 - CANTDOCACL_36;
+        Double MONTDOC_2 = Math.random() * MONTRENT;
+        Double MONTDOC_6 = MONTDOC_2 + Math.random() * MONTRENT;
+        Double MONTDOC_12 = MONTDOC_6 + Math.random() * MONTRENT;
+        Double MONTDOC_24 = MONTDOC_12 + Math.random() * MONTRENT;
+        Double MONTDOC_36 = MONTDOC_24 + Math.random() * MONTRENT;
+        Double MONTDOCACL_2 = Math.random() * MONTDOC_2;
+        Double MONTDOCACL_6 = MONTDOCACL_2 + Math.random() * (MONTDOC_6 - MONTDOC_2);
+        Double MONTDOCACL_12 = MONTDOCACL_2 + Math.random() * (MONTDOC_12 - MONTDOC_2);
+        Double MONTDOCACL_24 = MONTDOCACL_2 + Math.random() * (MONTDOC_24 - MONTDOC_2);
+        Double MONTDOCACL_36 = MONTDOCACL_2 + Math.random() * (MONTDOC_36 - MONTDOC_2);
+        Double MONTDOCNOAC_2 = MONTDOC_2 - MONTDOCACL_2;
+        Double MONTDOCNOAC_6 = MONTDOC_6 - MONTDOCACL_6;
+        Double MONTDOCNOAC_12 = MONTDOC_12 - MONTDOCACL_12;
+        Double MONTDOCNOAC_24 = MONTDOC_24 - MONTDOCACL_24;
+        Double MONTDOCNOAC_36 = MONTDOC_36 - MONTDOCACL_36;
+        Integer CANTCCC_2 = rd.nextInt(5);
+        Integer CANTCCC_6 = CANTCCC_2 + rd.nextInt(5);
+        Integer CANTCCC_12 = CANTCCC_6 + rd.nextInt(5);
+        Integer CANTCCC_24 = CANTCCC_12 + rd.nextInt(5);
+        Integer CANTCCC_36 = CANTCCC_24 + rd.nextInt(5);
+        Integer CANTTCC_2 = rd.nextInt(5);
+        Integer CANTTCC_6 = CANTTCC_2 + rd.nextInt(5);
+        Integer CANTTCC_12 = CANTTCC_6 + rd.nextInt(5);
+        Integer CANTTCC_24 = CANTTCC_12 + rd.nextInt(5);
+        Integer CANTTCC_36 = CANTTCC_24 + rd.nextInt(5);
+        Integer PUNTSCORE_2 = rd.nextInt(1000);
+        Integer PUNTSCORE_6 = rd.nextInt(1000);
+        Integer PUNTSCORE_12 = rd.nextInt(1000);
+        Integer PUNTSCORE_24 = rd.nextInt(1000);
+        Integer PUNTSCORE_36 = rd.nextInt(1000);
+        Double MONTBOLCON_2 = Math.random() * MONTDOC_2;
+        Double MONTBOLCON_6 = MONTBOLCON_2 + (Math.random() * MONTDOC_2);
+        Double MONTBOLCON_12 = MONTBOLCON_6 + (Math.random() * MONTDOC_2);
+        Double MONTBOLCON_24 = MONTBOLCON_12 + (Math.random() * MONTDOC_2);
+        Double MONTBOLCON_36 = MONTBOLCON_24 + (Math.random() * MONTDOC_2);
+        return new Attribute(
+                NCONSULTASRUT_2.toString(),
+                NCONSULTASRUT_6.toString(),
+                NCONSULTASRUT_12.toString(),
+                NCONSULTASRUT_24.toString(),
+                NCONSULTASRUT_36.toString(),
+                NHIJOS.toString(),
+                CANTANTLAB.toString(),
+                EDAD.toString(),
+                MONTRENT.toString(),
+                NPRENDAS.toString(),
+                CANTUBIDOM.toString(),
+                CANTACREE_2.toString(),
+                CANTACREE_6.toString(),
+                CANTACREE_12.toString(),
+                CANTACREE_24.toString(),
+                CANTACREE_36.toString(),
+                CANTDOC_2.toString(),
+                CANTDOC_6.toString(),
+                CANTDOC_12.toString(),
+                CANTDOC_24.toString(),
+                CANTDOC_36.toString(),
+                CANTDOCACL_2.toString(),
+                CANTDOCACL_6.toString(),
+                CANTDOCACL_12.toString(),
+                CANTDOCACL_24.toString(),
+                CANTDOCACL_36.toString(),
+                CANTDOCNOAC_2.toString(),
+                CANTDOCNOAC_6.toString(),
+                CANTDOCNOAC_12.toString(),
+                CANTDOCNOAC_24.toString(),
+                CANTDOCNOAC_36.toString(),
+                MONTDOC_2.toString(),
+                MONTDOC_6.toString(),
+                MONTDOC_12.toString(),
+                MONTDOC_24.toString(),
+                MONTDOC_36.toString(),
+                MONTDOCACL_2.toString(),
+                MONTDOCACL_6.toString(),
+                MONTDOCACL_12.toString(),
+                MONTDOCACL_24.toString(),
+                MONTDOCACL_36.toString(),
+                MONTDOCNOAC_2.toString(),
+                MONTDOCNOAC_6.toString(),
+                MONTDOCNOAC_12.toString(),
+                MONTDOCNOAC_24.toString(),
+                MONTDOCNOAC_36.toString(),
+                CANTCCC_2.toString(),
+                CANTCCC_6.toString(),
+                CANTCCC_12.toString(),
+                CANTCCC_24.toString(),
+                CANTCCC_36.toString(),
+                CANTTCC_2.toString(),
+                CANTTCC_6.toString(),
+                CANTTCC_12.toString(),
+                CANTTCC_24.toString(),
+                CANTTCC_36.toString(),
+                PUNTSCORE_2.toString(),
+                PUNTSCORE_6.toString(),
+                PUNTSCORE_12.toString(),
+                PUNTSCORE_24.toString(),
+                PUNTSCORE_36.toString(),
+                MONTBOLCON_2.toString(),
+                MONTBOLCON_6.toString(),
+                MONTBOLCON_12.toString(),
+                MONTBOLCON_24.toString(),
+                MONTBOLCON_36.toString());
     }
 }
