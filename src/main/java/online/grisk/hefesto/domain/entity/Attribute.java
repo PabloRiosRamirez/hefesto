@@ -152,7 +152,7 @@ public class Attribute {
         Integer NHIJOS = rd.nextInt(7);
         Integer CANTANTLAB = rd.nextInt(40);
         Integer EDAD = rd.nextInt(40);
-        Double MONTRENT = CANTANTLAB == 0 ? 0.00 : (Math.random() * 2500000) + 295000;
+        Double MONTRENT = CANTANTLAB == 0 ? 0.00 : redondearDecimales((Math.random() * 2500000) + 295000, 2);
         Integer NPRENDAS = rd.nextInt(5);
         Integer CANTUBIDOM = rd.nextInt(35);
         Integer CANTACREE_2 = rd.nextInt(10);
@@ -175,21 +175,21 @@ public class Attribute {
         Integer CANTDOCNOAC_12 = CANTDOC_12 - CANTDOCACL_12;
         Integer CANTDOCNOAC_24 = CANTDOC_24 - CANTDOCACL_24;
         Integer CANTDOCNOAC_36 = CANTDOC_36 - CANTDOCACL_36;
-        Double MONTDOC_2 = Math.random() * MONTRENT;
-        Double MONTDOC_6 = MONTDOC_2 + Math.random() * MONTRENT;
-        Double MONTDOC_12 = MONTDOC_6 + Math.random() * MONTRENT;
-        Double MONTDOC_24 = MONTDOC_12 + Math.random() * MONTRENT;
-        Double MONTDOC_36 = MONTDOC_24 + Math.random() * MONTRENT;
-        Double MONTDOCACL_2 = Math.random() * MONTDOC_2;
-        Double MONTDOCACL_6 = MONTDOCACL_2 + Math.random() * (MONTDOC_6 - MONTDOC_2);
-        Double MONTDOCACL_12 = MONTDOCACL_2 + Math.random() * (MONTDOC_12 - MONTDOC_2);
-        Double MONTDOCACL_24 = MONTDOCACL_2 + Math.random() * (MONTDOC_24 - MONTDOC_2);
-        Double MONTDOCACL_36 = MONTDOCACL_2 + Math.random() * (MONTDOC_36 - MONTDOC_2);
-        Double MONTDOCNOAC_2 = MONTDOC_2 - MONTDOCACL_2;
-        Double MONTDOCNOAC_6 = MONTDOC_6 - MONTDOCACL_6;
-        Double MONTDOCNOAC_12 = MONTDOC_12 - MONTDOCACL_12;
-        Double MONTDOCNOAC_24 = MONTDOC_24 - MONTDOCACL_24;
-        Double MONTDOCNOAC_36 = MONTDOC_36 - MONTDOCACL_36;
+        Double MONTDOC_2 = redondearDecimales(Math.random() * MONTRENT, 2);
+        Double MONTDOC_6 = redondearDecimales(MONTDOC_2 + (Math.random() * MONTRENT), 2);
+        Double MONTDOC_12 = redondearDecimales(MONTDOC_6 + (Math.random() * MONTRENT), 2);
+        Double MONTDOC_24 = redondearDecimales(MONTDOC_12 + (Math.random() * MONTRENT), 2);
+        Double MONTDOC_36 = redondearDecimales(MONTDOC_24 + (Math.random() * MONTRENT), 2);
+        Double MONTDOCACL_2 = redondearDecimales(Math.random() * MONTDOC_2, 2);
+        Double MONTDOCACL_6 = redondearDecimales(MONTDOCACL_2 + (Math.random() * (MONTDOC_6 - MONTDOC_2)), 2);
+        Double MONTDOCACL_12 = redondearDecimales(MONTDOCACL_2 + (Math.random() * (MONTDOC_12 - MONTDOC_2)), 2);
+        Double MONTDOCACL_24 = redondearDecimales(MONTDOCACL_2 + (Math.random() * (MONTDOC_24 - MONTDOC_2)), 2);
+        Double MONTDOCACL_36 = redondearDecimales(MONTDOCACL_2 + (Math.random() * (MONTDOC_36 - MONTDOC_2)), 2);
+        Double MONTDOCNOAC_2 = redondearDecimales(MONTDOC_2 - MONTDOCACL_2, 2);
+        Double MONTDOCNOAC_6 = redondearDecimales(MONTDOC_6 - MONTDOCACL_6, 2);
+        Double MONTDOCNOAC_12 = redondearDecimales(MONTDOC_12 - MONTDOCACL_12, 2);
+        Double MONTDOCNOAC_24 = redondearDecimales(MONTDOC_24 - MONTDOCACL_24, 2);
+        Double MONTDOCNOAC_36 = redondearDecimales(MONTDOC_36 - MONTDOCACL_36, 2);
         Integer CANTCCC_2 = rd.nextInt(5);
         Integer CANTCCC_6 = CANTCCC_2 + rd.nextInt(5);
         Integer CANTCCC_12 = CANTCCC_6 + rd.nextInt(5);
@@ -205,11 +205,11 @@ public class Attribute {
         Integer PUNTSCORE_12 = rd.nextInt(1000);
         Integer PUNTSCORE_24 = rd.nextInt(1000);
         Integer PUNTSCORE_36 = rd.nextInt(1000);
-        Double MONTBOLCON_2 = Math.random() * MONTDOC_2;
-        Double MONTBOLCON_6 = MONTBOLCON_2 + (Math.random() * MONTDOC_2);
-        Double MONTBOLCON_12 = MONTBOLCON_6 + (Math.random() * MONTDOC_2);
-        Double MONTBOLCON_24 = MONTBOLCON_12 + (Math.random() * MONTDOC_2);
-        Double MONTBOLCON_36 = MONTBOLCON_24 + (Math.random() * MONTDOC_2);
+        Double MONTBOLCON_2 = redondearDecimales(Math.random() * MONTDOC_2, 2);
+        Double MONTBOLCON_6 = redondearDecimales(MONTBOLCON_2 + (Math.random() * MONTDOC_2), 2);
+        Double MONTBOLCON_12 = redondearDecimales(MONTBOLCON_6 + (Math.random() * MONTDOC_2), 2);
+        Double MONTBOLCON_24 = redondearDecimales(MONTBOLCON_12 + (Math.random() * MONTDOC_2), 2);
+        Double MONTBOLCON_36 = redondearDecimales(MONTBOLCON_24 + (Math.random() * MONTDOC_2), 2);
         return new Attribute(
                 NCONSULTASRUT_2.toString(),
                 NCONSULTASRUT_6.toString(),
@@ -277,5 +277,15 @@ public class Attribute {
                 MONTBOLCON_12.toString(),
                 MONTBOLCON_24.toString(),
                 MONTBOLCON_36.toString());
+    }
+
+    private static double redondearDecimales(double valorInicial, int numeroDecimales) {
+        double parteEntera, resultado;
+        resultado = valorInicial;
+        parteEntera = Math.floor(resultado);
+        resultado = (resultado - parteEntera) * Math.pow(10, numeroDecimales);
+        resultado = Math.round(resultado);
+        resultado = (resultado / Math.pow(10, numeroDecimales)) + parteEntera;
+        return resultado;
     }
 }
