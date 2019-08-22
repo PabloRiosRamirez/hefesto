@@ -26,7 +26,11 @@ public class BureauBuilder {
     private static Applicant create(@NotNull Map<String, String> attributes) {
         Applicant applicant = new Applicant(
                 new Attribute(
-                        attributes.getOrDefault("NCONSULTASRUT", "0").toString(),
+                        attributes.getOrDefault("NCONSULTASRUT_2", "0").toString(),
+                        attributes.getOrDefault("NCONSULTASRUT_6", "0").toString(),
+                        attributes.getOrDefault("NCONSULTASRUT_12", "0").toString(),
+                        attributes.getOrDefault("NCONSULTASRUT_24", "0").toString(),
+                        attributes.getOrDefault("NCONSULTASRUT_36", "0").toString(),
                         attributes.getOrDefault("NHIJOS", "0").toString(),
                         attributes.getOrDefault("CANTDEUPREV", "0").toString(),
                         attributes.getOrDefault("EDAD", "0").toString(),
