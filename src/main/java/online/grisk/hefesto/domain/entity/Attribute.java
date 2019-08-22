@@ -151,7 +151,7 @@ public class Attribute {
         Integer NCONSULTASRUT_36 = NCONSULTASRUT_24 + rd.nextInt(5) + 1;
         Integer NHIJOS = rd.nextInt(7);
         Integer CANTANTLAB = rd.nextInt(40);
-        Integer EDAD = rd.nextInt(40);
+        Integer EDAD = rd.nextInt(40) + 18;
         Double MONTRENT = CANTANTLAB == 0 ? 0.00 : redondearDecimales((Math.random() * 2500000) + 295000, 2);
         Integer NPRENDAS = rd.nextInt(5);
         Integer CANTUBIDOM = rd.nextInt(35);
