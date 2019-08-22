@@ -11,9 +11,9 @@ import java.util.Map;
 
 public class BureauBuilder {
 
-    private static String useCaseGood = "";
-    private static String useCaseMedium = "";
-    private static String useCaseBad = "";
+    private static String useCaseGood = "{}";
+    private static String useCaseMedium = "{}";
+    private static String useCaseBad = "{}";
 
     private static ObjectMapper objectMapper = new ObjectMapper();
 
